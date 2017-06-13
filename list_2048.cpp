@@ -69,7 +69,7 @@ void list_2048::output()
 void list_2048::_left(int n)
 {
 	int tmp = 0, p = 0;
-	for (int i = 0; i < cc - 1; i++)
+	for (int i = 0; i < cc; i++)
 	{
 		if (num[n][i])
 		{
@@ -87,14 +87,14 @@ void list_2048::_left(int n)
 		}
 	}
 	num[n][p++] = tmp;
-	for (; p < cc - 1; p++)
+	for (; p < cc; p++)
 		num[n][p] = 0;
 }
 
 void list_2048::_right(int n)
 {
 	int tmp = 0, p = cc - 1;
-	for (int i = 0; i > 0; i--)
+	for (int i = cc-1; i >= 0; i--)
 	{
 		if (num[n][i])
 		{
@@ -112,14 +112,14 @@ void list_2048::_right(int n)
 		}
 	}
 	num[n][p--] = tmp;
-	for (; p > 0; p--)
+	for (; p >= 0; p--)
 		num[n][p] = 0;
 }
 
 void list_2048::_up(int n)
 {
 	int tmp = 0, p = 0;
-	for (int i = 0; i < cc - 1; i++)
+	for (int i = 0; i < cc; i++)
 	{
 		if (num[i][n])
 		{
@@ -137,14 +137,14 @@ void list_2048::_up(int n)
 		}
 	}
 	num[p++][n] = tmp;
-	for (; p < cc - 1; p++)
+	for (; p < cc; p++)
 		num[p][n] = 0;
 }
 
 void list_2048::_down(int n)
 {
-	int tmp = 0, p = cc-1;
-	for (int i = 0; i >0; i--)
+	int tmp = 0, p = cc - 1;
+	for (int i = cc-1; i >= 0; i--)
 	{
 		if (num[i][n])
 		{
@@ -162,7 +162,7 @@ void list_2048::_down(int n)
 		}
 	}
 	num[p--][n] = tmp;
-	for (; p > 0; p--)
+	for (; p >= 0; p--)
 		num[p][n] = 0;
 }
 
